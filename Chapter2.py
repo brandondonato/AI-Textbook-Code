@@ -60,3 +60,31 @@ data_normalized_l1 = preprocessing.normalize(input_data, norm="l1")
 data_normalized_l2 = preprocessing.normalize(input_data, norm="l2")
 print("\nL1 Normalized Data:\n", data_normalized_l1)
 print("\nL2 Normalized Data:\n", data_normalized_l2)
+
+'''
+    Label Encoding:
+        You use labls to classify the information we want to develop
+        an algorithm around. sklearn interprets labels as numbers.
+        Typically labels are words, so you need to turn the words
+        into numbers via Label Encoding. This will allow the algorithms
+        to operate on the data.
+'''
+
+input_labels = ['red', 'black', 'red', 'green', 'black', 'yellow', 'white']
+#Create the label encoder and fit the labels
+encoder = preprocessing.LabelEncoder()
+encoder.fit(input_labels)
+print("\nLabel Mapping\n")
+for i, item in enumerate(encoder.classes_):
+    print(item, '-->', i)
+
+test_labels = ['green','red','black']
+encoded_values = encoder.transform(test_labels)
+print("\nLabels =", test_labels)
+print("Encoded Values =", list(encoded_values))
+
+#   Decoding a set of values using the same encoder
+encoded_values = [3,0,4,1]
+decoded_list  = encoder.inverse_transform(encoded_values)
+print("\nEncoded values =", encoded_values)
+print("Decoded Lables =", list(decoded_list))
