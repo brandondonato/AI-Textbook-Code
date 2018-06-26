@@ -1,12 +1,15 @@
 '''
-Techniques uesd for preprocessing are:
-    Binarization
-    Mean Removal
-    Scaling
-    Normalization
+    Techniques uesd for preprocessing are:
+        Binarization
+        Mean Removal
+        Scaling
+        Normalization
 '''
 import numpy as np
 from sklearn import preprocessing
+from sklearn import linear_model
+import matplotlib.pyplot as plt
+
 
 input_data = np.array([[5.1, -2.9, 3.3],
                         [-1.2, 7.8, -6.1],
@@ -88,3 +91,15 @@ encoded_values = [3,0,4,1]
 decoded_list  = encoder.inverse_transform(encoded_values)
 print("\nEncoded values =", encoded_values)
 print("Decoded Lables =", list(decoded_list))
+
+'''
+    Logistic Regression Classifier: Used to explain the relationship
+    between input variables and output variables. Input variables are
+    independent and output variables are dependent. Dependent variables
+    can only take a fixed set of variables where the values correspond
+    to the types of classifications.
+
+    Using a sigmoid curve to buld a function with various parameters,
+    we estimate the association between independent and dependent
+    variables.
+'''
