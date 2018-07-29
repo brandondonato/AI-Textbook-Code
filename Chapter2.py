@@ -141,4 +141,3 @@ plt.yticks((np.arange(int(X[:, 1].min() - 1), int(X[:, 1].max() + 1),
    1.0)))
 
 plt.show()
-#This is a test for a new push
